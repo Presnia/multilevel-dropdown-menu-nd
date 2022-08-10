@@ -1,6 +1,6 @@
 import React from 'react';
 import { menuItems } from "../data/menuItems";
-
+import MenuItems from "./MenuItems";
 
 const NavBar = () => {
     return (
@@ -8,9 +8,7 @@ const NavBar = () => {
             <ul className="menus">
                 {
                     menuItems.map((menu, i) =>
-                        <li key={i} className='menu-items'>
-                            <a href='/#'>{menu.title}</a>
-                        </li>
+                        <MenuItems key={i} items={menu} />
                     )
                 }
             </ul>
