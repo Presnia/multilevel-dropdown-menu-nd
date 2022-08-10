@@ -1,10 +1,19 @@
 import React from 'react';
+import {MenuItems} from "./MenuItems";
 
 const NavBar = () => {
     return (
-        <div>
-            
-        </div>
+        <nav>
+            <ul className="menus">
+                {
+                    MenuItems.map((menu, i) =>
+                        <li key={i} className='menu-items'>
+                            <a href='/#'>{menu.title}</a>
+                        </li>
+                    )
+                }
+            </ul>
+        </nav>
     );
 };
 
