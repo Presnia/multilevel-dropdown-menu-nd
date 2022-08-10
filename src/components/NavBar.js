@@ -7,8 +7,10 @@ const NavBar = () => {
         <nav>
             <ul className="menus">
                 {
-                    menuItems.map((menu, i) =>
-                        <MenuItems key={i} items={menu} />
+                    menuItems.map((menu, i) => {
+                        const depthLevel = 0;
+                        return <MenuItems key={i} items={menu} depthLevel={depthLevel} />
+                        }
                     )
                 }
             </ul>

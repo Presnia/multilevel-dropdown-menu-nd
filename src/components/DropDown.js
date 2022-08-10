@@ -1,10 +1,17 @@
 import MenuItems from "./MenuItems";
 
-const Dropdown = ({ submenus, dropdown }) => {
+const Dropdown = ({ submenus, dropdown, depthLevel }) => {
+    depthLevel = depthLevel + 1;
+    const dropdownClass = depthLevel > 1 ? 'dropdown-submenu' : '';
+
     return (
-        <ul className={`dropdown ${dropdown ? 'show' : ''}`}>
+        <ul className={`dropdown ${dropdownClass} ${dropdown ? 'show' : ''}`}>
             {submenus.map((submenu, i) => (
-                <MenuItems key={i} items={submenu} />
+                <MenuItems
+                    key={i}
+                    items={submenu}
+                    depthLevel={depthLevel}
+                />
             ))}
         </ul>
     );

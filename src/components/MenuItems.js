@@ -1,7 +1,7 @@
 import Dropdown from "./DropDown";
 import {useState} from "react";
 
-const MenuItems = ({ items }) => {
+const MenuItems = ({ items, depthLevel }) => {
     const [dropdown, setDropdown] = useState(false);
 
     return (
@@ -15,10 +15,12 @@ const MenuItems = ({ items }) => {
                         onClick={() => setDropdown((prev) => !prev)}
                     >
                         {items.title}{" "}
+                        {depthLevel > 0 ? <span>&raquo;</span> : <span className="arrow" />}
                     </button>
                     <Dropdown
                         submenus={items.submenu}
                         dropdown={dropdown}
+                        depthLevel={depthLevel}
                     />
                 </>
             ) : (
