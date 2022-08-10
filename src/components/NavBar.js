@@ -1,12 +1,13 @@
 import React from 'react';
-import {MenuItems} from "./MenuItems";
+import { menuItems } from "../data/menuItems";
+
 
 const NavBar = () => {
     return (
         <nav>
             <ul className="menus">
                 {
-                    MenuItems.map((menu, i) =>
+                    menuItems.map((menu, i) =>
                         <li key={i} className='menu-items'>
                             <a href='/#'>{menu.title}</a>
                         </li>

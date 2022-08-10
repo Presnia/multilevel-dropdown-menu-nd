@@ -3,7 +3,18 @@ export const MenuItems = [
         title: 'Home'
     },
     {
-        title: 'Services'
+        title: 'Services',
+        submenu: [
+            {
+                title: "web design"
+            },
+            {
+                title: "web development",
+            },
+            {
+                title: "SEO"
+            }
+        ],
     },
     {
         title: 'About'
